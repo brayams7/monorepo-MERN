@@ -4,15 +4,19 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { useEffect } from "react"
-import {listArticlesService} from "@/features/articles/services/articles.services"
+import { useEffect, useState } from "react"
+import { greettingService } from "./core/common/services/common.services"
 export default function App() {
+  const [greet, setGreet] = useState('This is a demo dashboard.')
 
   useEffect(()=>{
-    const getListArticles = async () => {
-      await listArticlesService()
+    const greeting = async () => {
+      const data = await greettingService()
+      if(!data) return
+      setGreet(data)
     }
-    getListArticles()
+
+    greeting()
   },[])
 
   return (
@@ -35,7 +39,7 @@ export default function App() {
       <main className="container mx-auto mt-10 px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-2">Welcome to Dashboard</h2>
-          <p className="text-gray-400">This is a demo dashboard.</p>
+          <p className="text-gray-400">{greet}</p>
         </div>
 
         <Accordion type="single" collapsible className="w-full max-w-md mx-auto">

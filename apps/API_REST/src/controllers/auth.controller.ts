@@ -20,6 +20,6 @@ export const loginController = async (req: Request, res: Response) => {
 
 export const greetYouController = (_req: Request, res: Response) => {
   return res.json({
-    data: "Hola soy el controlador de auth",
+    message: "Hola soy el controlador de auth",
   })
 }
