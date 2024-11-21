@@ -1,0 +1,6 @@
+package-lock.json
+node_modules
+.turbo
+apps/**/.env
+apps/**/node_modules
+apps/**/dist
