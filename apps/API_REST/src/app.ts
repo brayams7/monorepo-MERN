@@ -20,7 +20,7 @@ app.use(cors()) //config de los cors
 app.use(morgan('dev'))
 
 app.use(express.json())
-app.use(router)
+app.use('/api', router)
 db().then(()=>console.log("Conección exitos"))
 .catch((error)=>console.log(error) + "Error")
 app.listen(PORT, ()=>console.log('Listo por el puerto ' + PORT))
