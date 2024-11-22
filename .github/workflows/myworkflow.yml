@@ -22,7 +22,7 @@ jobs:
         echo "Empezando con el Deployment"
     - name: Install Dependencies
       working-directory: apps/API_REST
-      run: npm ci
+      run: npm install
     - name: Build Application
       working-directory: apps/API_REST
       run: npm run build --if-present
