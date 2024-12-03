@@ -25,11 +25,18 @@ jobs:
     # Frontend Steps
     - name: Install Frontend Dependencies
       working-directory: apps/ecommerce_fe
-      run: npm install
+      run: npm ci
     - name: Build Application
       working-directory: apps/ecommerce_fe
       run: npm run build --if-present
-    - name: Realease Application
+    
+    - name: Configure Deployment Directory
+      run: |
+        sudo mkdir -p /var/www/test-client
+        sudo chown -R $USER:$USER /var/www/test-client
+        sudo chmod -R 755 /var/www/test-client
+
+    - name: Deploy Frontend Application
       working-directory: apps/ecommerce_fe
       run: |
         sudo touch .env
