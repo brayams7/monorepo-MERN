@@ -33,7 +33,6 @@ jobs:
       working-directory: apps/ecommerce_fe
       run: |
         touch .env
-        echo ${{ secrets.PROD_ENV_FRONTEND_FILE }}
         echo "${{ secrets.PROD_ENV_FRONTEND_FILE }}" > .env
         sudo cp -R dist/* /var/www/test-client
         sudo systemctl restart nginx
