@@ -24,7 +24,7 @@ export default function App() {
       {/* Minimalist Header */}
       <header className="p-4 border-b border-gray-800">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-semibold">Dashboard</h1>
+          <h1 className="text-xl font-semibold">Dashboard 1</h1>
           <nav>
             <ul className="flex space-x-4">
               <li><a href="#" className="hover:text-gray-300">Home</a></li>
